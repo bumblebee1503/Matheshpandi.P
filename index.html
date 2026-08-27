@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheshpandi P | Cybersecurity Professional</title>
+    <meta name="description" content="Cybersecurity professional focused on network security, threat detection, security monitoring, and security engineering.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #131926;
+            --bg-card: #1a2235;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-green: #00ff9d;
+            --accent-blue: #38bdf8;
+            --accent-purple: #a78bfa;
+            --border-color: #1e293b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 157, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 157, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px); 
+            z-index: 1000; 
+            border-bottom: 1px solid var(--border-color);
+        }
+        .nav-container {
+            max-width: 1200px; margin: auto; display: flex; justify-content: space-between;
+            align-items: center; padding: 1rem 2rem;
+        }
+        .logo { font-family: 'Fira Code', monospace; font-size: 1.2rem; color: var(--accent-green); font-weight: 600; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--accent-green); }
+
+        /* Sections */
+        section { max-width: 1200px; margin: auto; padding: 5rem 2rem; }
+        .section-title {
+            font-family: 'Fira Code', monospace; font-size: 1.8rem; margin-bottom: 2.5rem;
+            color: var(--text-primary); display: flex; align-items: center; gap: 1rem;
+        }
+        .section-title::before { content: '>'; color: var(--accent-green); font-weight: bold; }
+
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
+        .hero-layout { display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%; }
+        .hero-text { flex: 1; }
+        .hero-image-container { flex-shrink: 0; position: relative; }
+        
+        .profile-pic {
+            width: 320px; height: auto;
+            border-radius: 20px;
+            border: 4px solid var(--accent-green);
+            box-shadow: 0 10px 40px rgba(0, 255, 157, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--bg-card);
+        }
+        .profile-pic:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(0, 255, 157, 0.4);
+        }
+
+        .hero-greeting { font-family: 'Fira Code', monospace; color: var(--accent-green); margin-bottom: 1rem; font-size: 1.1rem; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero h2 { font-size: 2rem; color: var(--text-secondary); margin-bottom: 1.5rem; font-weight: 500; }
+        .hero p { max-width: 700px; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.7; }
+        
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 0.8rem 1.5rem; border: 1px solid var(--accent-green); color: var(--accent-green); text-decoration: none; border-radius: 4px; font-family: 'Fira Code', monospace; transition: 0.3s; font-size: 0.95rem; }
+        .btn:hover { background: rgba(0, 255, 157, 0.1); box-shadow: 0 0 20px rgba(0, 255, 157, 0.3); transform: translateY(-2px); }
+        .btn-secondary { border-color: var(--accent-blue); color: var(--accent-blue); }
+        .btn-secondary:hover { background: rgba(56, 189, 248, 0.1); box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: start; }
+        .about-text p { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 1.2rem; line-height: 1.8; }
+        .about-text strong { color: var(--text-primary); }
+        .about-text .highlight { color: var(--accent-green); }
+        .focus-card { background: var(--bg-card); padding: 1.8rem; border-radius: 8px; border: 1px solid var(--border-color); border-left: 3px solid var(--accent-green); position: sticky; top: 100px; }
+        .focus-card h3 { font-family: 'Fira Code', monospace; font-size: 1rem; margin-bottom: 1.2rem; color: var(--accent-green); }
+        .focus-card ul { list-style: none; }
+        .focus-card li { color: var(--text-secondary); margin-bottom: 0.9rem; font-size: 0.95rem; padding-left: 0.5rem; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .skill-card { background: var(--bg-card); padding: 1.8rem; border-radius: 8px; border: 1px solid var(--border-color); transition: 0.3s; }
+        .skill-card:hover { border-color: var(--accent-green); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 255, 157, 0.05); }
+        .skill-card h3 { color: var(--accent-blue); margin-bottom: 1.2rem; font-family: 'Fira Code', monospace; font-size: 1rem; }
+        .skill-card ul { list-style: none; }
+        .skill-card li { color: var(--text-secondary); margin-bottom: 0.6rem; padding-left: 1.4rem; position: relative; font-size: 0.95rem; }
+        .skill-card li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-green); font-weight: bold; }
+
+        /* Projects & Challenges & TryHackMe */
+        .projects-grid, .challenges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card, .challenge-card { background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: 0.3s; position: relative; overflow: hidden; }
+        .project-card::before, .challenge-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+        .project-card::before { background: linear-gradient(90deg, var(--accent-green), var(--accent-blue)); }
+        .challenge-card::before { background: linear-gradient(90deg, var(--accent-purple), var(--accent-green)); }
+        .project-card:hover::before, .challenge-card:hover::before { transform: scaleX(1); }
+        .project-card:hover, .challenge-card:hover { transform: translateY(-5px); }
+        .project-card:hover { border-color: var(--accent-blue); }
+        .challenge-card:hover { border-color: var(--accent-purple); box-shadow: 0 10px 30px rgba(167, 139, 250, 0.1); }
+        .project-icon, .challenge-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .project-card h3, .challenge-card h3 { margin-bottom: 0.5rem; color: var(--text-primary); font-size: 1.2rem; line-height: 1.3; }
+        .project-date { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--accent-green); margin-bottom: 1rem; }
+        .project-card p, .challenge-card p { color: var(--text-secondary); flex-grow: 1; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.7; }
+        .project-tech, .challenge-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .project-tech span, .challenge-tags span { background: var(--bg-secondary); padding: 0.3rem 0.7rem; border-radius: 4px; font-size: 0.8rem; font-family: 'Fira Code', monospace; border: 1px solid var(--border-color); }
+        .project-tech span { color: var(--accent-blue); }
+        .challenge-tags span { color: var(--accent-purple); }
+
+        /* Timeline */
+        .timeline { border-left: 2px solid var(--border-color); padding-left: 2rem; margin-left: 1rem; }
+        .timeline-item { margin-bottom: 2.5rem; position: relative; }
+        .timeline-item::before { content: ''; position: absolute; left: -2.45rem; top: 0.5rem; width: 12px; height: 12px; background: var(--accent-green); border-radius: 50%; border: 2px solid var(--bg-primary); box-shadow: 0 0 10px rgba(0, 255, 157, 0.5); }
+        .timeline-item h3 { color: var(--text-primary); margin-bottom: 0.3rem; font-size: 1.15rem; }
+        .timeline-item .role { color: var(--accent-blue); font-family: 'Fira Code', monospace; margin-bottom: 0.7rem; font-size: 0.9rem; }
+        .timeline-item p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Certifications */
+        .cert-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+        .cert-item { background: var(--bg-secondary); padding: 1.2rem 1.5rem; border-radius: 6px; border-left: 3px solid var(--accent-green); transition: 0.3s; }
+        .cert-item:hover { transform: translateX(5px); border-left-color: var(--accent-blue); }
+        .cert-item strong { color: var(--text-primary); display: block; margin-bottom: 0.3rem; }
+        .cert-item span { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
+
+        /* Languages */
+        .lang-grid { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .lang-item { background: var(--bg-card); padding: 1.5rem 2rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem; transition: 0.3s; min-width: 250px; }
+        .lang-item:hover { border-color: var(--accent-blue); transform: translateY(-3px); }
+        .lang-item .lang-flag { font-size: 2rem; }
+        .lang-item .lang-name { color: var(--text-primary); font-weight: 600; font-size: 1.1rem; }
+        .lang-item .lang-level { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* Footer / Contact */
+        footer { text-align: center; padding: 4rem 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); background: var(--bg-secondary); }
+        .contact-grid { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0; }
+        .contact-card { background: var(--bg-card); padding: 1.5rem 2rem; border-radius: 8px; border: 1px solid var(--border-color); min-width: 260px; text-align: left; transition: 0.3s; }
+        .contact-card:hover { border-color: var(--accent-green); transform: translateY(-3px); }
+        .contact-card .card-label { color: var(--accent-green); font-family: 'Fira Code', monospace; font-size: 0.85rem; margin-bottom: 0.5rem; display: block; }
+        .contact-card a, .contact-card span { color: var(--text-primary); text-decoration: none; font-size: 1rem; font-weight: 500; }
+        .contact-card a:hover { color: var(--accent-blue); }
+        
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; flex-wrap: wrap; }
+        .social-links a { font-family: 'Fira Code', monospace; font-size: 0.9rem; color: var(--accent-green); text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent-blue); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-layout { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+            .hero p { margin: 0 auto 2rem auto; }
+            .btn-group { justify-content: center; }
+            .profile-pic { width: 250px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .focus-card { position: static; }
+            section { padding: 3rem 1.5rem; }
+            .section-title { font-size: 1.5rem; }
+            .contact-card { min-width: 100%; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">&lt;Matheshpandi /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#challenges">Challenges</a></li>
+                <li><a href="#tryhackme">TryHackMe</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-layout">
+            <div class="hero-text">
+                <p class="hero-greeting">$ whoami</p>
+                <h1>Matheshpandi P.</h1>
+                <h2>Cybersecurity Professional.</h2>
+                <p>Building practical security solutions across cybersecurity, network security, threat detection, and security engineering. Recognized for analytical problem-solving, clear cross-functional communication, and the ability to maintain composure during high-pressure incident response scenarios.</p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="matheshpandi_resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <!-- Ensure you upload your image as 'profile.jpg' in the same folder -->
+                <img src="profile.jpg" alt="Matheshpandi P - Cybersecurity Professional" class="profile-pic">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I’m <strong>Matheshpandi P</strong>, a Computer Science and Cyber Security professional passionate about <span class="highlight">cybersecurity, network security, and security engineering</span>. I enjoy understanding how systems, networks, and applications work, how they can be attacked, and how security mechanisms can be designed to detect and prevent suspicious activity.</p>
+                <p>My technical foundation spans <strong>networking, cybersecurity, Linux, system administration, threat detection, vulnerability assessment, web security, and security-focused development</strong>. I have hands-on experience developing projects involving browser security, face spoofing detection, and secure communication systems.</p>
+                <p>These experiences have sharpened my <strong>analytical problem-solving skills</strong> and taught me how to <strong>maintain composure and clear communication during high-pressure technical challenges</strong>.</p>
+                <p>My current career goal is to begin my professional journey in <span class="highlight">Cybersecurity, SOC Operations, Network Security, or Security Engineering</span>, where I can solve real-world security problems and secure enterprise infrastructure.</p>
+            </div>
+            <div class="focus-card">
+                <h3>Core Focus</h3>
+                <ul>
+                    <li>️ Threat Detection & SOC</li>
+                    <li>🌐 Network Security</li>
+                    <li>🔍 Security Monitoring</li>
+                    <li>💻 Security Engineering</li>
+                    <li>🐧 Linux & SysAdmin</li>
+                    <li>🔒 Vulnerability Assessment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Cybersecurity & Threat Detection</h3>
+                <ul>
+                    <li>Network Security</li>
+                    <li>Threat Detection & Hunting</li>
+                    <li>Security Monitoring & SIEM</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Incident Response & SOC</li>
+                    <li>Behavioral Detection</li>
+                    <li>OWASP Top 10</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Security Frameworks & Standards</h3>
+                <ul>
+                    <li>NIST Cybersecurity Framework (CSF)</li>
+                    <li>MITRE ATT&CK Framework</li>
+                    <li>NIST SP 800-53</li>
+                    <li>ISO 27001 Awareness</li>
+                    <li>CIS Controls</li>
+                    <li>Threat Modeling</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Compliance & Privacy</h3>
+                <ul>
+                    <li>HIPAA (Health Data Protection)</li>
+                    <li>GDPR (Data Privacy Regulation)</li>
+                    <li>PCI DSS Awareness</li>
+                    <li>Privacy-Preserving Design</li>
+                    <li>Data Protection Principles</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Networking & Infrastructure</h3>
+                <ul>
+                    <li>TCP/IP, DNS, DHCP</li>
+                    <li>Routing & Switching</li>
+                    <li>Firewall & VPN Configuration</li>
+                    <li>Network Hardening</li>
+                    <li>Network Traffic Analysis</li>
+                    <li>Active Directory</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Security Engineering</h3>
+                <ul>
+                    <li>Behavioral Analysis</li>
+                    <li>Risk Scoring & Classification</li>
+                    <li>Browser Security</li>
+                    <li>Security Event Logging</li>
+                    <li>Alert Generation</li>
+                    <li>Real-Time Detection Systems</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Platforms</h3>
+                <ul>
+                    <li>Wazuh, Wireshark, Nmap</li>
+                    <li>Nessus, OpenVAS, Burp Suite</li>
+                    <li>Metasploit, Volatility</li>
+                    <li>Kali Linux, Cisco Packet Tracer</li>
+                    <li>Chrome Extension APIs</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Systems & Programming</h3>
+                <ul>
+                    <li>Linux (Kali, Ubuntu)</li>
+                    <li>Windows Administration</li>
+                    <li>Python (Security Automation)</li>
+                    <li>JavaScript, Bash, PowerShell</li>
+                    <li>C, SQL, HTML/CSS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">🛡️</div>
+                <h3>AI-Driven Detection and Prevention of Prompt Poaching Attacks</h3>
+                <div class="project-date">May 2026 | Project Lead & Lead Developer</div>
+                <p><strong>Led the end-to-end development</strong> of a privacy-preserving, browser-level behavioral detection system (Chrome Manifest V3). <strong>Solved complex client-side security challenges</strong> by engineering a heuristic risk-scoring algorithm that analyzes network metadata and behavioral indicators without inspecting user content, achieving 80% detection accuracy. Leveraged AI-assisted development tools to accelerate prototyping while maintaining strict ownership of the security logic.</p>
+                <div class="project-tech"><span>JavaScript</span><span>Chrome Manifest V3</span><span>Heuristic Analysis</span><span>Risk Scoring</span><span>AI-Assisted Dev</span></div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">👁️</div>
+                <h3>Real-Time Face Spoofing Detection System</h3>
+                <div class="project-date">Nov 2025 | Project Lead & Lead Developer</div>
+                <p><strong>Spearheaded the development</strong> of a lightweight, real-time face anti-spoofing system using classical computer vision. <strong>Overcame hardware constraints</strong> by designing an optimized color space (YCrCb & LUV) feature extraction pipeline across 6 channels, achieving 92.5% accuracy and 7.3% Equal Error Rate (EER) using an Extra Trees Classifier, optimized for CPU-only edge devices.</p>
+                <div class="project-tech"><span>Python</span><span>OpenCV</span><span>scikit-learn</span><span>Computer Vision</span><span>Biometric Security</span></div>
+            </div>
+            <div class="project-card">
+                <div class="project-icon">💡</div>
+                <h3>LiFi-Based Secure Communication Prototype</h3>
+                <div class="project-date">Apr 2023 | Project Lead & Developer</div>
+                <p><strong>Directed the hardware and software integration</strong> for a wireless data transmission prototype using Visible Light Communication (VLC). <strong>Troubleshot complex hardware-software interfacing issues</strong> to enable reliable 30 cm data transfer. <strong>Presented the final solution</strong> confidently to a panel of experts, securing selection for the SRM Project Expo 2023.</p>
+                <div class="project-tech"><span>Arduino</span><span>Hardware Integration</span><span>VLC</span><span>Embedded Systems</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenges">
+        <h2 class="section-title">Technical Challenges & Growth</h2>
+        <p style="color: var(--text-secondary); max-width: 800px; margin-bottom: 3rem; font-size: 1.05rem; line-height: 1.7;">Cybersecurity isn't just about knowing tools—it's about persistence through pressure, debugging complex systems, and continuously learning.</p>
+        <div class="challenges-grid">
+            <div class="challenge-card"><div class="challenge-icon">🐛</div><h3>Debugging Complex Systems</h3><p>Spent countless hours tracing browser API interactions, debugging Manifest V3 service worker lifecycle issues, and optimizing heuristic risk-scoring algorithms.</p><div class="challenge-tags"><span>JavaScript Debugging</span><span>Browser APIs</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">⏰</div><h3>Working Under Pressure</h3><p>Built my Face Spoofing Detection system in 3 weeks while managing coursework. Learned to prioritize features and deliver a working prototype with 92.5% accuracy despite tight deadlines.</p><div class="challenge-tags"><span>Time Management</span><span>Rapid Prototyping</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">📚</div><h3>Learning New Tools</h3><p>Mastered Wazuh SIEM, Wireshark, and Burp Suite through hands-on labs. Completed TryHackMe's Advent of Cyber 2025 and Hack The Box challenges.</p><div class="challenge-tags"><span>SIEM & Log Analysis</span><span>Continuous Learning</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🏗️</div><h3>Building Complete Systems</h3><p>Designed end-to-end security systems—from architecture design to real-time dashboards and alert mechanisms, focusing on scalability and privacy.</p><div class="challenge-tags"><span>System Design</span><span>Privacy-Preserving</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🔍</div><h3>Analyzing Real-World Threats</h3><p>Researched prompt-poaching attacks in AI environments. Thought creatively about behavioral detection and privacy-preserving monitoring without inspecting user content.</p><div class="challenge-tags"><span>Threat Research</span><span>Behavioral Analysis</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🤝</div><h3>Collaboration & Communication</h3><p>Led team projects, coordinated development milestones, and presented technical solutions to faculty and peers with clear documentation.</p><div class="challenge-tags"><span>Technical Leadership</span><span>Documentation</span></div></div>
+        </div>
+    </section>
+
+    <!-- TryHackMe Section -->
+    <section id="tryhackme">
+        <h2 class="section-title">TryHackMe Journey</h2>
+        <p style="color: var(--text-secondary); max-width: 800px; margin-bottom: 3rem; font-size: 1.05rem; line-height: 1.7;">I actively practice offensive and defensive security through hands-on labs and CTF challenges on TryHackMe, continuously sharpening my skills in real-world scenarios.</p>
+        <div class="challenges-grid">
+            <div class="challenge-card"><div class="challenge-icon">🎄</div><h3>Advent of Cyber 2025</h3><p>Completed 25 days of intensive CTF challenges covering web security, network forensics, cryptography, privilege escalation, and incident response.</p><div class="challenge-tags"><span>Web Security</span><span>Cryptography</span><span>Incident Response</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🛡️</div><h3>Pre-Security Learning Path</h3><p>Mastered foundational cybersecurity concepts including network fundamentals, web basics, Linux administration, and security principles.</p><div class="challenge-tags"><span>Networking</span><span>Linux</span><span>Web Basics</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🌐</div><h3>Web Fundamentals Path</h3><p>Explored web application security through hands-on labs covering OWASP Top 10 vulnerabilities, HTTP protocols, and authentication bypasses using Burp Suite.</p><div class="challenge-tags"><span>OWASP Top 10</span><span>Burp Suite</span><span>Web Attacks</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">⚔️</div><h3>CompTIA PenTest+ Path</h3><p>Completed labs aligned with PenTest+ objectives, covering reconnaissance, scanning, exploitation, post-exploitation, and reporting.</p><div class="challenge-tags"><span>Reconnaissance</span><span>Exploitation</span><span>Reporting</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🏴‍☠️</div><h3>CTF Challenges</h3><p>Regularly solve Capture The Flag challenges across categories including web exploitation, cryptography, forensics, reverse engineering, and privilege escalation.</p><div class="challenge-tags"><span>Forensics</span><span>Cryptography</span><span>Privilege Escalation</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">📊</div><h3>Continuous Learning</h3><p>Consistently practicing on TryHackMe to stay current with emerging threats, new attack techniques, and defensive strategies for SOC and Security Engineering roles.</p><div class="challenge-tags"><span>Blue Team</span><span>Red Team</span><span>Threat Intel</span></div></div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://tryhackme.com/p/bumblebee15" target="_blank" class="btn">View My TryHackMe Profile →</a>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Izeon Innovative Pvt. Ltd</h3>
+                <div class="role">Cyber Security Intern | Jun 2024 – Jul 2024</div>
+                <p>Operated in a SOC-focused environment learning TCP/IP, Linux, and Network Protocols. Participated in incident response simulations, applying SIEM-based threat detection and correlation concepts to assess technology risk under time-sensitive conditions. Demonstrated strong analytical problem-solving and clear communication while documenting findings.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>SRM Institute of Science and Technology</h3>
+                <div class="role">B.Tech in CSE (Cyber Security) | Sep 2022 – May 2026</div>
+                <p>Graduated with a CGPA of 8.14/10. Focused on network security, cryptography, security operations, and practical security engineering through hands-on projects and research.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Achievements -->
+    <section id="certifications">
+        <h2 class="section-title">Certifications & Achievements</h2>
+        <div class="cert-list">
+            <div class="cert-item"><strong>Cisco</strong><span>Networking Basics | Ethical Hacker | Security Operations Center (SOC)</span></div>
+            <div class="cert-item"><strong>TryHackMe</strong><span>Pre-Security | Web Fundamentals | CompTIA PenTest+ Path</span></div>
+            <div class="cert-item"><strong>LinkedIn Learning</strong><span>Kali Linux & WSL | Ethical Hacking (Social Eng., Wireless, System) | Security Auditor</span></div>
+            <div class="cert-item"><strong>PortSwigger</strong><span>Hands-on Web Application Security Labs (SQLi, XSS, SSRF, Authentication)</span></div>
+            <div class="cert-item"><strong>IBM SkillsBuild</strong><span>Cyber Security Fundamentals | Security Learning Academy | Cyber Resilience</span></div>
+            <div class="cert-item"><strong>Google Cloud</strong><span>Strategies for Cloud Security Risk Management</span></div>
+            <div class="cert-item"><strong>Coursera</strong><span>Advanced Malware & Network Anomaly Detection | Digital Forensics</span></div>
+            <div class="cert-item"><strong>Red Hat & GUVI</strong><span>Program Learner | Python Programming Certificate</span></div>
+        </div>
+
+        <h3 style="font-family: 'Fira Code', monospace; font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1.5rem;">🏆 Key Achievements</h3>
+        <div class="timeline" style="border-left-color: var(--accent-purple);">
+            <div class="timeline-item">
+                <h3>Published Research Paper</h3>
+                <div class="role" style="color: var(--accent-purple);">ICMMCS 2025, Pattaya, Thailand | January 2025</div>
+                <p>"Enhancing Breast Cancer Prediction Accuracy: A Comparative Study of Linear Regression Models with Feature Scaling Techniques."</p>
+            </div>
+            <div class="timeline-item">
+                <h3>TryHackMe: Advent of Cyber 2025</h3>
+                <div class="role" style="color: var(--accent-purple);">Continuous Learning</div>
+                <p>Solved hands-on CTF challenges focusing on practical web security, networking, and cryptography.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>DevOps Technical Workshop</h3>
+                <div class="role" style="color: var(--accent-purple);">SRM Institute of Science & Technology</div>
+                <p>Participated in an intensive, hands-on workshop covering modern DevOps practices and infrastructure automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages">
+        <h2 class="section-title">Languages</h2>
+        <div class="lang-grid">
+            <div class="lang-item">
+                <span class="lang-flag">🇮🇳</span>
+                <div>
+                    <div class="lang-name">Tamil</div>
+                    <div class="lang-level">Native Proficiency</div>
+                </div>
+            </div>
+            <div class="lang-item">
+                <span class="lang-flag">🇬🇧</span>
+                <div>
+                    <div class="lang-name">English</div>
+                    <div class="lang-level">Professional Proficiency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact">
+        <h2 class="section-title" style="justify-content: center; text-align: center;">Get In Touch</h2>
+        <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">Ready to secure your infrastructure? Let's connect and build something resilient together.</p>
+        
+        <!-- Contact Info Cards -->
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span class="card-label">📧 Email</span>
+                <a href="mailto:madhespothirajan@gmail.com">madhespothirajan@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <span class="card-label"> Phone</span>
+                <a href="tel:+919791404624">+91 9791404624</a>
+            </div>
+            <div class="contact-card">
+                <span class="card-label">📍 Location</span>
+                <span>Ramanathapuram, Tamil Nadu - 623501</span>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://linkedin.com/in/matheshpandi-p-025392250" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/bumblebee1503" target="_blank">💻 GitHub</a>
+            <a href="https://tryhackme.com/p/bumblebee15" target="_blank">🎯 TryHackMe</a>
+            <a href="https://profile.hackthebox.com/profile/01a03f46-434b-7053-a64c-347be97f8402" target="_blank">⚔️ Hack The Box</a>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 0.8rem; color: #475569;">&copy; 2026 Matheshpandi P. Built with passion and secure code.</p>
+    </footer>
+
+</body>
+</html>

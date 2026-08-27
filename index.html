@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheshpandi P | Cybersecurity Professional</title>
+    <!-- Icon added to the browser tab title -->
+    <title> Matheshpandi P | Cybersecurity Professional</title>
     <meta name="description" content="Cybersecurity professional focused on network security, threat detection, security monitoring, and security engineering.">
+    <!-- Custom Favicon (Shield Icon) for the browser tab -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -72,9 +75,13 @@
         .hero-text { flex: 1; }
         .hero-image-container { flex-shrink: 0; position: relative; }
         
+        /* Larger Circular Profile Picture */
         .profile-pic {
-            width: 320px; height: auto;
-            border-radius: 20px;
+            width: 380px; /* Increased size */
+            height: 380px; /* Must match width for a perfect circle */
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
             border: 4px solid var(--accent-green);
             box-shadow: 0 10px 40px rgba(0, 255, 157, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -86,7 +93,8 @@
         }
 
         .hero-greeting { font-family: 'Fira Code', monospace; color: var(--accent-green); margin-bottom: 1rem; font-size: 1.1rem; }
-        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; background: linear-gradient(135deg, #fff 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: flex; align-items: center; gap: 1rem; }
+        .hero h1 .title-icon { -webkit-text-fill-color: initial; font-size: 3rem; }
         .hero h2 { font-size: 2rem; color: var(--text-secondary); margin-bottom: 1.5rem; font-weight: 500; }
         .hero p { max-width: 700px; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.7; }
         
@@ -175,13 +183,14 @@
             .hero-layout { flex-direction: column-reverse; text-align: center; gap: 2rem; }
             .hero p { margin: 0 auto 2rem auto; }
             .btn-group { justify-content: center; }
-            .profile-pic { width: 250px; }
+            .profile-pic { width: 280px; height: 280px; } /* Adjusted for mobile */
             .about-grid { grid-template-columns: 1fr; }
             .focus-card { position: static; }
             section { padding: 3rem 1.5rem; }
             .section-title { font-size: 1.5rem; }
             .contact-card { min-width: 100%; }
             .nav-links { display: none; }
+            .hero h1 { justify-content: center; }
         }
     </style>
 </head>
@@ -190,7 +199,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">&lt;Matheshpandi /&gt;</div>
+            <div class="logo"> &lt;Matheshpandi P /&gt;</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -209,7 +218,8 @@
         <div class="hero-layout">
             <div class="hero-text">
                 <p class="hero-greeting">$ whoami</p>
-                <h1>Matheshpandi P.</h1>
+                <!-- Icon added to the main title -->
+                <h1><span class="title-icon"></span>Matheshpandi P</h1>
                 <h2>Cybersecurity Professional.</h2>
                 <p>Building practical security solutions across cybersecurity, network security, threat detection, and security engineering. Recognized for analytical problem-solving, clear cross-functional communication, and the ability to maintain composure during high-pressure incident response scenarios.</p>
                 <div class="btn-group">
@@ -219,7 +229,7 @@
             </div>
             
             <div class="hero-image-container">
-                <!-- Ensure you upload your image as 'profile.jpg' in the same folder -->
+                <!-- Updated to profile.png -->
                 <img src="profile.png" alt="Matheshpandi P - Cybersecurity Professional" class="profile-pic">
             </div>
         </div>
@@ -238,8 +248,8 @@
             <div class="focus-card">
                 <h3>Core Focus</h3>
                 <ul>
-                    <li>️ Threat Detection & SOC</li>
-                    <li>🌐 Network Security</li>
+                    <li>🛡️ Threat Detection & SOC</li>
+                    <li> Network Security</li>
                     <li>🔍 Security Monitoring</li>
                     <li>💻 Security Engineering</li>
                     <li>🐧 Linux & SysAdmin</li>
@@ -367,7 +377,7 @@
             <div class="challenge-card"><div class="challenge-icon">🐛</div><h3>Debugging Complex Systems</h3><p>Spent countless hours tracing browser API interactions, debugging Manifest V3 service worker lifecycle issues, and optimizing heuristic risk-scoring algorithms.</p><div class="challenge-tags"><span>JavaScript Debugging</span><span>Browser APIs</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">⏰</div><h3>Working Under Pressure</h3><p>Built my Face Spoofing Detection system in 3 weeks while managing coursework. Learned to prioritize features and deliver a working prototype with 92.5% accuracy despite tight deadlines.</p><div class="challenge-tags"><span>Time Management</span><span>Rapid Prototyping</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">📚</div><h3>Learning New Tools</h3><p>Mastered Wazuh SIEM, Wireshark, and Burp Suite through hands-on labs. Completed TryHackMe's Advent of Cyber 2025 and Hack The Box challenges.</p><div class="challenge-tags"><span>SIEM & Log Analysis</span><span>Continuous Learning</span></div></div>
-            <div class="challenge-card"><div class="challenge-icon">🏗️</div><h3>Building Complete Systems</h3><p>Designed end-to-end security systems—from architecture design to real-time dashboards and alert mechanisms, focusing on scalability and privacy.</p><div class="challenge-tags"><span>System Design</span><span>Privacy-Preserving</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">️</div><h3>Building Complete Systems</h3><p>Designed end-to-end security systems—from architecture design to real-time dashboards and alert mechanisms, focusing on scalability and privacy.</p><div class="challenge-tags"><span>System Design</span><span>Privacy-Preserving</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">🔍</div><h3>Analyzing Real-World Threats</h3><p>Researched prompt-poaching attacks in AI environments. Thought creatively about behavioral detection and privacy-preserving monitoring without inspecting user content.</p><div class="challenge-tags"><span>Threat Research</span><span>Behavioral Analysis</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">🤝</div><h3>Collaboration & Communication</h3><p>Led team projects, coordinated development milestones, and presented technical solutions to faculty and peers with clear documentation.</p><div class="challenge-tags"><span>Technical Leadership</span><span>Documentation</span></div></div>
         </div>
@@ -379,10 +389,10 @@
         <p style="color: var(--text-secondary); max-width: 800px; margin-bottom: 3rem; font-size: 1.05rem; line-height: 1.7;">I actively practice offensive and defensive security through hands-on labs and CTF challenges on TryHackMe, continuously sharpening my skills in real-world scenarios.</p>
         <div class="challenges-grid">
             <div class="challenge-card"><div class="challenge-icon">🎄</div><h3>Advent of Cyber 2025</h3><p>Completed 25 days of intensive CTF challenges covering web security, network forensics, cryptography, privilege escalation, and incident response.</p><div class="challenge-tags"><span>Web Security</span><span>Cryptography</span><span>Incident Response</span></div></div>
-            <div class="challenge-card"><div class="challenge-icon">🛡️</div><h3>Pre-Security Learning Path</h3><p>Mastered foundational cybersecurity concepts including network fundamentals, web basics, Linux administration, and security principles.</p><div class="challenge-tags"><span>Networking</span><span>Linux</span><span>Web Basics</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">️</div><h3>Pre-Security Learning Path</h3><p>Mastered foundational cybersecurity concepts including network fundamentals, web basics, Linux administration, and security principles.</p><div class="challenge-tags"><span>Networking</span><span>Linux</span><span>Web Basics</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">🌐</div><h3>Web Fundamentals Path</h3><p>Explored web application security through hands-on labs covering OWASP Top 10 vulnerabilities, HTTP protocols, and authentication bypasses using Burp Suite.</p><div class="challenge-tags"><span>OWASP Top 10</span><span>Burp Suite</span><span>Web Attacks</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">⚔️</div><h3>CompTIA PenTest+ Path</h3><p>Completed labs aligned with PenTest+ objectives, covering reconnaissance, scanning, exploitation, post-exploitation, and reporting.</p><div class="challenge-tags"><span>Reconnaissance</span><span>Exploitation</span><span>Reporting</span></div></div>
-            <div class="challenge-card"><div class="challenge-icon">🏴‍☠️</div><h3>CTF Challenges</h3><p>Regularly solve Capture The Flag challenges across categories including web exploitation, cryptography, forensics, reverse engineering, and privilege escalation.</p><div class="challenge-tags"><span>Forensics</span><span>Cryptography</span><span>Privilege Escalation</span></div></div>
+            <div class="challenge-card"><div class="challenge-icon">🏴☠️</div><h3>CTF Challenges</h3><p>Regularly solve Capture The Flag challenges across categories including web exploitation, cryptography, forensics, reverse engineering, and privilege escalation.</p><div class="challenge-tags"><span>Forensics</span><span>Cryptography</span><span>Privilege Escalation</span></div></div>
             <div class="challenge-card"><div class="challenge-icon">📊</div><h3>Continuous Learning</h3><p>Consistently practicing on TryHackMe to stay current with emerging threats, new attack techniques, and defensive strategies for SOC and Security Engineering roles.</p><div class="challenge-tags"><span>Blue Team</span><span>Red Team</span><span>Threat Intel</span></div></div>
         </div>
         <div style="text-align: center; margin-top: 3rem;">
@@ -468,11 +478,11 @@
         <!-- Contact Info Cards -->
         <div class="contact-grid">
             <div class="contact-card">
-                <span class="card-label">📧 Email</span>
+                <span class="card-label">📩 Email</span>
                 <a href="mailto:madhespothirajan@gmail.com">madhespothirajan@gmail.com</a>
             </div>
             <div class="contact-card">
-                <span class="card-label"> Phone</span>
+                <span class="card-label">📞 Phone</span>
                 <a href="tel:+919791404624">+91 9791404624</a>
             </div>
             <div class="contact-card">
@@ -484,7 +494,7 @@
         <!-- Social Links -->
         <div class="social-links">
             <a href="https://linkedin.com/in/matheshpandi-p-025392250" target="_blank">💼 LinkedIn</a>
-            <a href="https://github.com/bumblebee1503" target="_blank">💻 GitHub</a>
+            <a href="https://github.com/bumblebee1503" target="_blank"> GitHub</a>
             <a href="https://tryhackme.com/p/bumblebee15" target="_blank">🎯 TryHackMe</a>
             <a href="https://profile.hackthebox.com/profile/01a03f46-434b-7053-a64c-347be97f8402" target="_blank">⚔️ Hack The Box</a>
         </div>
